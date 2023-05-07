@@ -1,3 +1,5 @@
+package com.erp.utils;
+
 public class Wait {
 
     private static void waitfor(int i) {
