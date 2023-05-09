@@ -2,10 +2,14 @@ package com.erp.tests;
 
 import com.erp.testbase.WebTestBase;
 import com.erp.utils.ConfigurationReader;
+import com.erp.utils.Wait;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.MalformedURLException;
 
@@ -29,7 +33,7 @@ public class EtsyChromeTest extends WebTestBase {
         WebElement results = driver.findElement(By.xpath("//span[contains(text(),'results,')]"));
         System.out.println(results.getText());
 
-//email-name
+
     }
 
     @Test
@@ -39,7 +43,7 @@ public class EtsyChromeTest extends WebTestBase {
 
         String email = ConfigurationReader.getProperty("email");
         String password = ConfigurationReader.getProperty("password");
-
+        // i tried try/catch did not work used Thread sleep and throws
 
         WebElement signIn = driver.findElement(By.xpath("//a[@href='https://www.etsy.com/signin/router?ref=hdr-signin&from_action=signin-header&from_page=https%3A%2F%2Fwww.etsy.com%2F']"));
         signIn.click();
@@ -47,11 +51,18 @@ public class EtsyChromeTest extends WebTestBase {
         WebElement userName = driver.findElement(By.name("email"));
         userName.sendKeys(email + Keys.ENTER);
         Thread.sleep(6000);
+
         WebElement pass = driver.findElement(By.name("password"));
         pass.sendKeys(password + Keys.ENTER);
-        WebElement button = driver.findElement(By.name("submit_attempt"));
+        // the result will be reset password-
+
         Thread.sleep(6000);
-        // button.click();
+        WebElement resetPassword = driver.findElement(By.xpath("//div[@class='wt-mt-xs-1 wt-mb-xs-2']//p"));
+
+        String actualResult = resetPassword.getText();
+        String expectedResult = "Reset your password";
+        Assertions.assertEquals(expectedResult, actualResult);
+        System.out.println(actualResult);
 
         Thread.sleep(6000);
     }

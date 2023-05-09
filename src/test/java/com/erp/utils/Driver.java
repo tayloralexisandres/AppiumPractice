@@ -38,7 +38,7 @@ public class Driver {
                 case "android-remote":
                     DesiredCapabilities capabilities = new DesiredCapabilities();
 
-                    //set yout access credentials
+                    //set your access credentials
                     capabilities.setCapability("browserstack.user", "testuser_1PhU8F");
                     capabilities.setCapability("browserstack.key", "qxU7LuK78o8BK1ki799f");
                     //set your URL of the application under test
