@@ -11,11 +11,14 @@ public class SauceLabAppTest {
 
 
     @Test
-            public void testLogin() throws InterruptedException {
+    public void testLogin() throws InterruptedException {
+
+        /// make sure to change your configuration.properties file to this-platform=android-sauceLabApp
+        //and create your android-sauceLapApp in Driver class
         AppiumDriver<MobileElement> driver = Driver.getDriver();
 
         System.out.println(driver.getDeviceTime());
-Thread.sleep(4000);
+        Thread.sleep(4000);
         driver.findElement(MobileBy.AccessibilityId("test-Username")).sendKeys("standard_user");
         Thread.sleep(4000);
         driver.findElement(MobileBy.AccessibilityId("test-Password")).sendKeys("secret_sauce");
@@ -25,11 +28,10 @@ Thread.sleep(4000);
 
         // cast our driver to AndroidDriver to be able use a useful method that comes from this library
         // similate to JSE at selenium, we can use following script to scroll into view
-        ((AndroidDriver)driver).findElementsByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Policy\"));");
+        ((AndroidDriver) driver).findElementsByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Policy\"));");
 
-  driver.closeApp();
+        driver.closeApp();
     }
-
 
 
 }
