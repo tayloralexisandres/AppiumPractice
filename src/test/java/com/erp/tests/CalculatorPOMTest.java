@@ -17,6 +17,7 @@ public class CalculatorPOMTest {
         int actual= Integer.parseInt(page.result.getText());
         int expected=6;
         Assertions.assertEquals(expected,actual);
+        System.out.println("int a * int b = "+actual);
         page.clear.click();
         page.clickDigit(9);
         page.subtract.click();
@@ -25,6 +26,7 @@ public class CalculatorPOMTest {
         int actualsub=Integer.parseInt(page.result.getText());
         int expectedsb=3;
         Assertions.assertEquals(expected,actual);
+        System.out.println("int a - int b = "+actualsub);
 
 
     }
