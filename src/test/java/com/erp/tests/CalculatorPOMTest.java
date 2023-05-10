@@ -10,6 +10,12 @@ public class CalculatorPOMTest {
 
     @Test
     public void pom_test(){
+
+        // make sure to pass your chromedriver absolute path into your appium server
+        // under advanced to start session for this test
+
+
+
         page.clickDigit(2);
         page.multiply.click();
         page.clickDigit(3);
