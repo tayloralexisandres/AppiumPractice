@@ -21,9 +21,9 @@ public class EtsyChromeTest extends WebTestBase {
 
         driver.get("https://www.etsy.com");
         WebElement searchField = driver.findElement(By.name("search_query"));
-        searchField.sendKeys("wooden spoon" + Keys.ENTER);
+        searchField.sendKeys("Colorado flag" + Keys.ENTER);
         WebElement results = driver.findElement(By.xpath("//span[contains(text(),'results,')]"));
-        System.out.println("There are :" + results.getText() + " for wooden spoons on etsy");
+        System.out.println("There are :" + results.getText() + " for Colorado flags on etsy");
 
 
     }
