@@ -22,7 +22,7 @@ public class EtsyAppTest {
         caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10.0");
         // we need to do some settings related to APP under test
         caps.setCapability(MobileCapabilityType.APP,"https://cybertek-appium.s3.amazonaws.com/etsy.apk");
-        // app package and main activity of the APP shpuld be defined
+        // app package and main activity of the APP should be defined
         caps.setCapability("appPackage","com.etsy.android");
         caps.setCapability("appActivity","com.etsy.android.ui.user.auth.SignInActivity");
 
