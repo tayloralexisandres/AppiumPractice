@@ -23,7 +23,7 @@ public class EtsyAppTest {
         // we need to do some settings related to APP under test
         caps.setCapability(MobileCapabilityType.APP,"https://cybertek-appium.s3.amazonaws.com/etsy.apk");
         // app package and main activity of the APP should be defined
-        caps.setCapability("appPackage","com.etsy.android");
+       caps.setCapability("appPackage","com.etsy.android");
         caps.setCapability("appActivity","com.etsy.android.ui.user.auth.SignInActivity");
 
         URL url = new URL("http://localhost:4723/wd/hub");
@@ -36,11 +36,16 @@ public class EtsyAppTest {
         // send email information
         driver.findElement(By.id("com.etsy.android:id/clg_text_input")).sendKeys("areatha@uspeakw.com");
         Thread.sleep(3000);
+
+
         //click on continue button: when you try to click on this element is behind, to lower the keyboard
         driver.hideKeyboard();
+
+
+
         Thread.sleep(3000);
         driver.findElement(By.id("com.etsy.android:id/sign_in_button_email")).click();
-        Thread.sleep(000);
+        Thread.sleep(2000);
         // get text of the username information
         //System.out.println(driver.findElement(By.id("join-neu-overlay-title")).getText());
         Thread.sleep(2000);
