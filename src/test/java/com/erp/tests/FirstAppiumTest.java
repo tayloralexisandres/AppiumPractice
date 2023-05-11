@@ -29,7 +29,7 @@ public class FirstAppiumTest {
     URL url = new URL("http://localhost:4723/wd/hub");
     driver = new AndroidDriver<MobileElement>(url, capabilities);
     //  Thread.sleep(3000);
-    Thread.sleep(300);
+    Thread.sleep(3000);
 
     driver.closeApp();
 }
