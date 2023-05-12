@@ -37,13 +37,15 @@ public class SauceLabRemoteiOSTest {
         capabilities.setCapability("sauce:options", sauceOptions);
 
         driver = new AndroidDriver(url, capabilities);
+driver.closeApp();
 
+       // driver.findElement(MobileBy.AccessibilityId("test-Username")).sendKeys("standard_user");
+       // driver.findElement(MobileBy.AccessibilityId("test-Password")).sendKeys("secret_sauce");
+       // driver.findElement(MobileBy.AccessibilityId("test-LOGIN")).click();
 
-        driver.findElement(MobileBy.AccessibilityId("test-Username")).sendKeys("standard_user");
-        driver.findElement(MobileBy.AccessibilityId("test-Password")).sendKeys("secret_sauce");
-        driver.findElement(MobileBy.AccessibilityId("test-LOGIN")).click();
+       // driver.closeApp();
 
-        driver.closeApp();
+        driver.quit();
     }
 
    // for android on saucelabs
