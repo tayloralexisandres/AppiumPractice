@@ -7,7 +7,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.junit.jupiter.api.Test;
 
-public class SauceLabAppTest {
+public class SauceLabAppTestAndroid {
 
 
     @Test
