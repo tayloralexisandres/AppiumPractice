@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
@@ -46,7 +47,11 @@ public class CalculatorTests {
         MobileElement clearElement=driver.findElement(MobileBy.AccessibilityId("clear"));
         System.out.println(clearElement.getText()+" : AC on the calculator");
         Assertions.assertTrue(clearElement.isDisplayed());
+
         driver.closeApp();
+
+
+
 
     }
 }
