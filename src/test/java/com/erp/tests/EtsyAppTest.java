@@ -23,7 +23,7 @@ public class EtsyAppTest extends WebTestBase {
     public void etsyTest() throws MalformedURLException, InterruptedException {
         DesiredCapabilities caps = new DesiredCapabilities();
         // Below lines are related to device settings
-        caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel 3.2");
+        caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel 3.3");
         caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
         caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10.0");
         // we need to do some settings related to APP under test

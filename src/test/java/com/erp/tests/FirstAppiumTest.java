@@ -19,7 +19,7 @@ public class FirstAppiumTest {
 @Test
     public void test1() throws MalformedURLException, InterruptedException {
     DesiredCapabilities capabilities = new DesiredCapabilities();
-    capabilities.setCapability("deviceName", "Pixel 3");
+    capabilities.setCapability("deviceName", "Pixel 3.3");
     capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
     capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10");
     capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
