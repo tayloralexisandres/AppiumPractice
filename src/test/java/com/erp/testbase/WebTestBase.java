@@ -19,7 +19,7 @@ public abstract class WebTestBase {
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, Platform.ANDROID);
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"10.0");
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 3");
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Pixel 3.2");
         capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,"Chrome");
 
         URL url=new URL("http://localhost:4723/wd/hub");

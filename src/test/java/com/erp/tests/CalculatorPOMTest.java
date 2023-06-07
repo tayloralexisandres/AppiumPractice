@@ -1,15 +1,27 @@
 package com.erp.tests;
 
 import com.erp.pages.CalculatorPage;
+import com.erp.testbase.WebTestBase;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.offset.PointOption;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
 
-public class CalculatorPOMTest {
+import java.net.MalformedURLException;
+
+public class CalculatorPOMTest extends WebTestBase {
+
+
 
     CalculatorPage page=new CalculatorPage();
 
+    public CalculatorPOMTest() throws MalformedURLException, InterruptedException {
+    }
+
     @Test
-    public void pom_test(){
+    public void pom_test() throws MalformedURLException, InterruptedException {
 
         // make sure to pass your chromedriver absolute path into your appium server
         // under advanced to start session for this test
@@ -33,6 +45,8 @@ public class CalculatorPOMTest {
         int expectedsb=3;
         Assertions.assertEquals(expected,actual);
         System.out.println("int a - int b = "+actualsub);
+
+
 
 
     }

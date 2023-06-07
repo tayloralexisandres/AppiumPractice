@@ -32,6 +32,8 @@ public class SauceLabRemoteiOSTest {
 
         // apply for the app activity
         capabilities.setCapability("appium:appWaitActivity","com.swaglabsmobileapp.MainActivity");
+
+        sauceOptions.setCapability("name", "swaglab test Iphone no Driver case");
         sauceOptions.setCapability("username", System.getenv("SAUCE_USERNAME"));
         sauceOptions.setCapability("accessKey", System.getenv("SAUCE_ACCESS_KEY"));
         capabilities.setCapability("sauce:options", sauceOptions);

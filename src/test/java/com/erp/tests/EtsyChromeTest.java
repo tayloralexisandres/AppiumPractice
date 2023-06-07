@@ -3,15 +3,25 @@ package com.erp.tests;
 import com.erp.testbase.WebTestBase;
 import com.erp.utils.ConfigurationReader;
 import com.erp.utils.Wait;
+import io.appium.java_client.PerformsTouchActions;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.remote.MobileCapabilityType;
+import io.appium.java_client.touch.offset.PointOption;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.WebDriver;
 
 import java.net.MalformedURLException;
+import java.net.URL;
 
 public class EtsyChromeTest extends WebTestBase {
 
@@ -26,10 +36,13 @@ public class EtsyChromeTest extends WebTestBase {
         System.out.println("There are :" + results.getText() + " for Colorado flags on etsy");
 
 
+
+
+
     }
 
     @Test
-    public void logintest() throws InterruptedException {
+    public void logintest() throws InterruptedException, MalformedURLException {
 
         driver.get("https://www.etsy.com");
         // set variables
@@ -64,6 +77,25 @@ public class EtsyChromeTest extends WebTestBase {
         Thread.sleep(2000);
 
         System.out.println(actualResult);
+
+
+
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        int width = ((Long) jsExecutor.executeScript("return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;")).intValue();
+        int height = ((Long) jsExecutor.executeScript("return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;")).intValue();
+
+        // Calculate swipe coordinates
+        int start_x = width / 2;
+        int start_y = (int) (height * 0.3);
+        int end_x = width / 2;
+        int end_y = (int) (height * 0.8);
+
+        // Perform swipe down
+      TouchAction swipeDown = new TouchAction((AndroidDriver)driver);
+        swipeDown.press(PointOption.point(start_x, start_y))
+                .moveTo(PointOption.point(end_x, end_y))
+                .release()
+                .perform();
 
 
 
